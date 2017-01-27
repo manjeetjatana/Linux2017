@@ -1,14 +1,10 @@
-#!/bin/ bash
-#My lab 1.7
+#/bin/bash
 
-#totalf=`find ~/Pictures/ -maxdepth 1 -type f | awk '/\//{print ++c, $0}' | tail -n 1 | awk '{print $1}'`
-echo "The total files on ~/Pictiures directory is of $totalf files."
+echo -n "In the ~/Pictures directory, the number of files is "
+find ~/Pictures -type f|wc -l
+du -h ~/Pictures |awk '{print $1}'
 
-#This command will show how much space on disk these files used
-totals=`find ~/Pictures/ -type f -print0 |du --files0-from=- -shc | tail -n1 | awk '{print $1}'`
-echo "The total usage of disk space is $totals"
+echo "the 3 largest files are:"
+echo "==================="
+du -h ~/Pictures/* | sort  -h  | tail -3 
 
-#This command will show the 3 largest files on ~/Pictiures/
-files=`find ~/Pictures/ -type f -print0 | du --files0-from=- -sh | sort -h |tail -3`
-echo "three biggest files are
-$files"
