@@ -1,6 +1,6 @@
 #!/bin/bash
 # this script prints out a welcome message
-# it demonstrates using variables
+# it demonstrates using variables 
 
  export MYNAME="Manjeet"
  mytitle="Supreme Commander"
